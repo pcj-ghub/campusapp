@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../libs/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/sys/sysmain.css">
+  <link rel="stylesheet" href="../../css/sys/user.css">
+  <title>校园活动管理</title>
+</head>
+<body>
+  <div id="sysapp">
+    
+    <div id="addUser">
+      <form class="form-horizontal" >
+        <div class="form-group">
+          <label class="col-sm-2 control-label">活动名称</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="actName" name="actName" v-model="act.actName" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">活动时间</label>
+          <div class="col-sm-5">
+            <input
+              type="datetime-local"
+              class="form-control"
+              id="actTime"
+              name="actTime"
+              v-model="act.actTime"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">活动地点</label>
+          <div class="col-sm-5">
+            <input
+              type="text"
+              class="form-control"
+              id="actPlace"
+              name="actPlace"
+              v-model="act.actPlace"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="tel" class="col-sm-2 control-label">联系方式</label>
+          <div class="col-sm-5">
+            <input type="tel" class="form-control" id="tel" name="tel" v-model="act.phone" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="tel" class="col-sm-2 control-label">活动简介</label>
+          <div class="col-sm-6">
+            <textarea
+              name="jianj"
+              id="jianj"
+              cols="40"
+              rows="5"
+              maxlength="100"
+              v-model="act.jianj"
+              style="border-left:1px solid #ccc;"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">活动类别</label>
+          <label class="col-sm-2 control-label">
+            <input type="radio" value="竞技" name="liebie" v-model="act.lieb" />竞技
+          </label>
+          <label class="col-sm-2 control-label">
+            <input type="radio" value="娱乐" name="liebie" v-model="act.lieb" />娱乐
+          </label>
+          <label class="col-sm-2 control-label">
+            <input type="radio" value="科技" name="liebie" v-model="act.lieb" />科技
+          </label>
+          <label class="col-sm-2 control-label">
+            <input type="radio" value="文艺" name="liebie" v-model="act.lieb" />文艺
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">活动级别</label>
+          <label class="col-sm-2 control-label">
+            <input type="radio" value="校级" name="Jb" v-model="act.Jb" />校级
+          </label>
+          <label class="col-sm-2 control-label">
+            <input type="radio" value="院级" name="Jb" v-model="act.Jb" />院级
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">活动新鲜度</label>
+          <label class="col-sm-2 control-label">
+            <input type="radio" value="传统" name="Lx" v-model="act.Lx" />传统
+          </label>
+          <label class="col-sm-2 control-label">
+            <input type="radio" value="新鲜" name="Lx" v-model="act.Lx" />新鲜
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">活动报名上限</label>
+          <div class="col-sm-5">
+            <input type="number" class="form-control" v-model="act.num">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">图片选择</label>
+          <div class="col-sm-5">
+            <input type="file" id="photo" name="photo" ref="photo" @change="addphoto()" />
+          </div>
+        </div>
+          <div class="form-group">
+            
+            <div class="col-sm-offset-5 col-sm-7">
+              <input type="button" class="btn btn-primary" id="submit" name="submit" @click="addUser()" value="添加此商品">
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    
+
+    
+    
+  </div>
+</body>
+</html>
+<script src="../../libs/js/jquery.js"></script>
+<script src="../../libs/js/bootstrap.min.js"></script>
+<script src="../../libs/js/vue.js"></script>
+<script src="../../libs/js/axios.min.js"></script>
+<script src="../../libs/layer/layer.js"></script>
+<script src="../../js/sys/product_sys/add.js"></script>

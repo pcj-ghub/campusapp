@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../libs/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/sys/sysmain.css">
+  <link rel="stylesheet" href="../css/sys/user.css">
+  <title>学生用户管理</title>
+</head>
+<body>
+  <div id="sysapp">
+    <table class="table table-bordered table-hover table-striped" style="margin-top: 50px;" v-for="item in stList" :key="item.userid">
+      <thead>
+          <tr>
+            <th>ID</th>
+            <th>社团名称</th>
+            <th>所属学院</th>
+            <th>社团所在地</th>
+            <th>负责人姓名</th>
+            <th>职位</th>
+            <th>电话</th>
+            <th>邮箱</th>
+          </tr>
+        
+      </thead>
+      <tbody>
+          <tr>
+            <td>{{item._id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.xueyuan}}</td>
+            <td>{{item.address}}</td>
+            <td>{{item.leadername}}</td>
+            <td>{{item.leaderzhiw}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.email}}</td>
+          </tr>
+      </tbody>
+    </table>
+    <table class="table table-bordered table-hover table-striped" v-for="item in grList" :key="item.userid">
+      <thead>
+          <tr>
+            <th>学生ID</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>电话</th>
+            <th>身份证号</th>
+            <th>所属学院</th>
+            <th>专业班级</th>
+            <th>校园卡号</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>{{item._id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.sex}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.personID}}</td>
+            <td>{{item.xueyuan}}</td>
+            <td>{{item.classname}}</td>
+            <td>{{item.camID}}</td>
+          </tr>
+      </tbody>
+    </table>
+    
+  </div>
+</body>
+</html>
+<script src="../libs/js/jquery.js"></script>
+<script src="../libs/js/bootstrap.min.js"></script>
+<script src="../libs/js/vue.js"></script>
+<script src="../libs/js/axios.min.js"></script>
+<script src="../libs/layer/layer.js"></script>
+<script src="../js/sys/djUser.js"></script>

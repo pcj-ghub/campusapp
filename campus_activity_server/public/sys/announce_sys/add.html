@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../libs/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/sys/sysmain.css">
+  <link rel="stylesheet" href="../../css/sys/user.css">
+  <title>学生用户管理</title>
+</head>
+<body>
+  <div id="sysapp">
+    
+    <div id="addUser">
+      <form class="form-horizontal" >
+        <div class="from-group" style="width: 520px;margin-top: 20px;">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">
+              <span>*</span>姓名：
+            </label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" v-model="student.name" />
+            </div>
+            <label class="col-sm-2 control-label">
+              <span>*</span>性别：
+            </label>
+            <div class="col-sm-3">
+              <label class="radio-inline">
+                <input type="radio" name="sex" value="man" v-model="student.sex" />男
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="sex" value="woman" v-model="student.sex" />女
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">
+              <span>*</span>电话：
+            </label>
+            <div class="col-sm-5">
+              <input type="tel" class="form-control" v-model="student.phone">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">
+              <span>*</span>身份证号：
+            </label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" v-model="student.personID" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">
+              <span>*</span>学历：
+            </label>
+            <div class="col-sm-5">
+              <select class="form-control" v-model="student.background">
+                <option>小学</option>
+                <option>初中</option>
+                <option>高中</option>
+                <option>本科</option>
+                <option>专科</option>
+                <option>研究生</option>
+                <option>硕士</option>
+                <option>博士</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">
+              <span>*</span>学校：
+            </label>
+            <div class="col-sm-5">
+              <select class="form-control" v-model="student.campus">
+                <option>天津商业大学</option>
+                <option>22222222大学</option>
+                <option>3333333333大学</option>
+                <option>44444444大学</option>
+                <option>5555555大学</option>
+                <option>6666666大学</option>
+                <option>sdfsadfas大学</option>
+                <option>sadfasdfas大学</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">
+              <span>*</span>校园卡号：
+            </label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" v-model="student.camID" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-5 col-sm-7">
+              <input type="button" class="btn btn-primary" id="submit" name="submit" @click="addUser()" value="添加此学生用户">
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    
+
+    
+    
+    
+  </div>
+</body>
+</html>
+<script src="../../libs/js/jquery.js"></script>
+<script src="../../libs/js/bootstrap.min.js"></script>
+<script src="../../libs/js/vue.js"></script>
+<script src="../../libs/js/axios.min.js"></script>
+<script src="../../libs/layer/layer.js"></script>
+<script src="../../js/sys/announce_sys/add.js"></script>
